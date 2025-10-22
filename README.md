@@ -66,3 +66,28 @@
 
 3. Hasil:
 ![Screenshot ocr_sederhana](images/2.jpg)
+
+## Soal 3: Implementasi Plugin Text-to-Speech (TTS)
+
+- Tujuan: Mengintegrasikan fitur membaca teks secara lisan menggunakan *plugin* flutter_tts.
+
+1. Instalasi Plugin (5 Poin):
+    • Tambahkan *plugin* flutter_tts ke dalam file pubspec.yaml (gunakan versi terbaru yang kompatibel).
+    • Jalankan flutter pub get.
+
+2. Konversi Widget dan Inisialisasi (10 Poin):
+    • Ubah ResultScreen dari StatelessWidget menjadi **StatefulWidget**.
+    • Di initState(), inisialisasi FlutterTts dan atur bahasa pembacaan menjadi Bahasa Indonesia.
+    • Implementasikan dispose() untuk menghentikan mesin TTS saat halaman ditutup.
+
+3. Fungsionalitas Pembacaan (15 Poin):
+    • Tambahkan FloatingActionButton kedua di ResultScreen (atau ganti AppBar dengan action button) dengan ikon Icons.volume_up.
+    • Ketika tombol ditekan, panggil fungsi speak() pada FlutterTts untuk membacakan seluruh isi ocrText.
+
+4. Hasil:
+    - plugin:
+![Screenshot ocr_sederhana](images/3.1.jpg)
+    - Scan:
+![Screenshot ocr_sederhana](images/3.2.1.jpg)
+    - Hasil (text-to-speach kanan atas):
+![Screenshot ocr_sederhana](images/3.2.2.jpg)
