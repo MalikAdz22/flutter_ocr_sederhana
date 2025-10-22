@@ -49,3 +49,20 @@
 ![Screenshot ocr_sederhana](images/1.2.2.jpg)
     - Menekan tombol home:
 ![Screenshot ocr_sederhana](images/1.1.jpg)
+
+## Soal 2: Penyesuaian Tampilan dan Penanganan State/Error
+
+- Tujuan: Memperbaiki tampilan *loading* dan memberikan *feedback* error yang lebih jelas.
+
+1. Custom Loading Screen di ScanScreen:
+    • Di ScanScreen (lib/screens/scan_screen.dart), modifikasi tampilan *loading* yang muncul sebelum kamera siap (if (!controller.value.isInitialized)) :
+    • Latar Belakang: Scaffold(backgroundColor: Colors.grey[900]).
+    • Isi: Di dalam Center, tampilkan Column berisi CircularProgressIndicator(coloColors.yellow).
+    • Di bawah indikator, tambahkan Text(’Memuat Kamera... Harap tunggu.’, style: TextStyle(color: Colors.white, fontSize: 18)).
+
+2. Spesifikasi Pesan Error:
+    • Di fungsi _takePicture() pada ScanScreen, modifikasi blok catch (e) untuk mengubah pesan *error* pada SnackBar.
+    • Pesan SnackBar harus berbunyi: "Pemindaian Gagal! Periksa Izin Kamera atau coba lagi." (Hilangkan variabel *error* ($e)).
+
+3. Hasil:
+![Screenshot ocr_sederhana](images/2.jpg)
